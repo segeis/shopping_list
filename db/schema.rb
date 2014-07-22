@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722103124) do
+ActiveRecord::Schema.define(version: 20140722115248) do
 
   create_table "items", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.boolean  "purchased"
-    t.integer  "quantity"
+    t.integer  "quantity",   default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
