@@ -1,0 +1,18 @@
+
+<tr>
+	<td>
+		<div class="actions">
+	    <%= button_to item.purchased,
+	    purchase_item_path(item),
+	    method: :put,
+	    remote: true,
+	    :class => 'btn btn-default' %></td>
+		</div>
+	<td><%= item.quantity %></td>
+	<td><%= item.name %></td>
+	<td><%=l item.created_at, format: :short %></td>
+	<td><%= item.user.username %></td>
+	<td><%= link_to 'Edit', edit_item_path(item.id), :class => 'btn btn-default' %></td>
+</tr>
+
+<%= will_paginate %>

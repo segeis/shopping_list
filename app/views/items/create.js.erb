@@ -1,0 +1,6 @@
+<% if @item.new_record? %>
+	$('input#item_name').effect('highlight', { color: 'red' });
+<% else %>
+	$('div#items').append("<%= escape_javascript(render @item) %>");
+	$('div#<%= dom_id(@item) %>').effect('highlight');
+<% end %> 

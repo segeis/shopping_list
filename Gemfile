@@ -50,6 +50,7 @@ gem 'validates_formatting_of'
 
 #own
 gem 'will_paginate'
+gem 'jquery-ui-rails'
 
 #heroku gems
 gem 'rails_12factor', group: :production

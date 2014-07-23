@@ -40,6 +40,7 @@ class ItemsController < ApplicationController
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -65,6 +66,11 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def purchase 
+    @item.toggle!(:purchased)
+    @item.save
   end
 
   private
