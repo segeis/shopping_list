@@ -4,9 +4,9 @@
     <tr>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:purchased) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th>Created from</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,9 +14,9 @@
       <tr>
         <td><%= item.quantity %></td>
         <td><%= item.name %></td>
-        <td><%= item.purchased %></td>
         <td><%=l item.created_at, format: :short %></td>
-        <td><%= item.user(:name) %></td>
+        <td><%= item.user %></td>
+        <td><%= link_to 'Edit', edit_item_path(item.id), :class => 'btn btn-default' %></td>
       </tr>
     <% end %>
   </tbody>
