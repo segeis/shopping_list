@@ -1,1 +1,2 @@
-$('#purchase').text('<%= @item.purchase %>').effect('highlight', {}, 3000);
+$('td#purchase').append("<%= escape_javascript(render @item %>").effect('highlight', {}, 3000);
+

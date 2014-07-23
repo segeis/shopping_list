@@ -1,5 +1,4 @@
-
-<tr>
+<tr id="purchase">
 	<td>
 		<span id="purchase">
 	    <%= button_to "Toggle",
@@ -8,12 +7,12 @@
 	    remote: true %></td>
 		</span>
 
-	<td><%= item.purchased %></td>
+	<td id="purchase">
+		<%= item.purchased %>
+	</td>
 	<td><%= item.quantity %></td>
 	<td><%= item.name %></td>
 	<td><%=l item.created_at, format: :short %></td>
 	<td><%= item.user.username %></td>
 	<td><%= link_to 'Edit', edit_item_path(item.id), :class => 'btn btn-default' %></td>
 </tr>
-
-<%= will_paginate %>
