@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.paginate(page: params[:page])
+    @items = Item.order(:purchased, :updated_at).paginate(page: params[:page])
   end
 
   # GET /items/1
@@ -21,16 +21,20 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /items
   # POST /items.json
   def create
-    @item = current_user.items.new(item_params)
+    @item = current_user.items.build(item_params)
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to new_item_path, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
