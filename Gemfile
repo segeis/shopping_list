@@ -48,6 +48,9 @@ gem 'bootstrap-sass-extras'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
+#own
+gem 'will_paginate'
+
 #heroku gems
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
