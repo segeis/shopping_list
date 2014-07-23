@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase]
   before_action :authenticate_user!
   before_action :user_signed_in?
 
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order(:purchased, :updated_at).paginate(page: params[:page])
+    @items = Item.order('purchased DESC, created_at').paginate(page: params[:page])
   end
 
   # GET /items/1
@@ -68,9 +68,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def purchase 
+  def purchase  
     @item.toggle!(:purchased)
     @item.save
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

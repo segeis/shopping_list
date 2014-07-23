@@ -1,13 +1,14 @@
 
 <tr>
 	<td>
-		<div class="actions">
-	    <%= button_to item.purchased,
+		<span id="purchase">
+	    <%= button_to "Toggle",
 	    purchase_item_path(item),
-	    method: :put,
-	    remote: true,
-	    :class => 'btn btn-default' %></td>
-		</div>
+ 		method: :put,
+	    remote: true %></td>
+		</span>
+
+	<td><%= item.purchased %></td>
 	<td><%= item.quantity %></td>
 	<td><%= item.name %></td>
 	<td><%=l item.created_at, format: :short %></td>
