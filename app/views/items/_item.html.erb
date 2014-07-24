@@ -13,6 +13,6 @@
 	<td><%= item.quantity %></td>
 	<td><%= item.name %></td>
 	<td><%=l item.created_at, format: :short %></td>
-	<td><%= item.user %></td>
+	<td><%= item.user.username %></td>
 	<td><%= link_to 'Edit', edit_item_path(item.id), :class => 'btn btn-default' %></td>
 </tr>
