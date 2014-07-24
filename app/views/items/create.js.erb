@@ -1,6 +1,8 @@
 <% if @item.new_record? %>
-	$('input#item_name').effect('highlight', { color: 'red' });
+	$('input#item_name, input#item_quantity').effect('highlight', { color: 'red' });
 <% else %>
-	$('table#items').append("<%= escape_javascript(render @item) %>");
-	$('table<%= dom_id(@item) %>').effect('highlight');
+	$('table#items').prepend("<%= escape_javascript(render @item) %>");
+	$('tbody tr').first().effect('highlight');
+	$('input#item_name').val('');
+	$('input#item_quantity').val('1');
 <% end %> 

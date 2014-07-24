@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :items do
-    put :purchase, on: :member
+    post :purchase, on: :member
   end
 
   

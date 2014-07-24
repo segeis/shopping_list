@@ -8,27 +8,26 @@
     <%= f.number_field :quantity %>
   </div>
   <div class='actions'>
-      <%= f.submit %>
+      <%= f.submit :class => 'btn btn-primary'%>
   </div>
 <% end %> 
 
 
 
 
-  <table id="items" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Purchased?</th>
-        <th>Purchased?</th>
-        <th><%= model_class.human_attribute_name(:quantity) %></th>
-        <th><%= model_class.human_attribute_name(:name) %></th>
-        <th><%= model_class.human_attribute_name(:created_at) %></th>
-        <th>Created by</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @items %>
-    </tbody>
-
+<table id="items" class="table">
+  <thead>
+    <tr>
+      <th>Purchased?</th>
+      <th>Purchased?</th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Created by</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @items %>
+  </tbody>
 </table>
