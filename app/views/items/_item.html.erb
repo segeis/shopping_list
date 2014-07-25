@@ -1,18 +1,16 @@
-<tr>
-	<td>
-		<span id="purchase">
-	    <%= button_to "Toggle",
+<tr class="<%= "purchased" if item.purchased? %>">
+	<td id="toggle-purchase">
+	    <%= button_to "Purchased?",
 	    purchase_item_path(item),
  		method: :post,
-	    remote: true %></td>
-		</span>
-
-	<td id="purchase">
+	    remote: true,
+	    :class => 'btn btn-default' %>
+	</td>
+	<td id="purchased">
 		<%= item.purchased %>
 	</td>
 	<td><%= item.quantity %></td>
 	<td><%= item.name %></td>
-	<td><%=l item.created_at, format: :short %></td>
-	<td><%= item.user.username %></td>
+	<td><%=l item.created_at, format: :short %> by <%= item.user.username %></td>
 	<td><%= link_to 'Edit', edit_item_path(item.id), :class => 'btn btn-default' %></td>
 </tr>
