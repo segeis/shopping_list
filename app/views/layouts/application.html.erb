@@ -9,11 +9,11 @@
 
 </head>
 <body>
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
+<div class="container well">
+	<%= render partial: "elements/navbar" %>
+	<%= bootstrap_flash %>
 
-
-<%= yield %>
-
+	<%= yield %>
+</div>
 </body>
 </html>
