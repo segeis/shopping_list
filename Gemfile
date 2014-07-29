@@ -49,9 +49,10 @@ gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
 #own
-gem 'will_paginate'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
+gem 'jquery_mobile_rails'
+gem 'browser'
 
 #heroku gems
 gem 'rails_12factor', group: :production

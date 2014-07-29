@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_device_type
 
   protected
 
@@ -35,4 +36,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_device_type
+    request.variant = :phone if browser.mobile?
+  end
 end

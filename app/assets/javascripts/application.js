@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery.ui.effect-highlight
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.mobile
+
 //= require bootstrap
 
 //= require_tree .
