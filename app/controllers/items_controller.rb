@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order('purchased, created_at DESC')
+    @items = Item.where(purchased: [false, nil]).order('created_at DESC')
   end
 
   # GET /items/1

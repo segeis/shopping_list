@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery.ui.effect-highlight
 //= require jquery_ujs
-//= require jquery.mobile
+
 
 //= require bootstrap
 
